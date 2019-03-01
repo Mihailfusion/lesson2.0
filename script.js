@@ -18,17 +18,22 @@ var appData = {
         // Первый   вариант 
 
 for (let i = 0; i < 2; i++)  {
-    let a = prompt("Введите обязательную статью расходов в этом месяце", ''),
-        b = prompt("Во сколько обойдется?", '');
-        if (!a.match(/^\d+$/) && (typeof (a)) != null && (typeof (b)) != null
-        && a != '' && b != '' && a.length < 50){
-            console.log("done");
+    let a = prompt("Введите обязательную статью расходов в этом месяце", 'вапвап'),
+        b = prompt("Во сколько обойдется?", 'вапвап');
+        if (a == null || b == null) {
+            alert("Заполните поля");
+            console.log(a),
+            i--
+        }
+        else if (!a.match(/^\d+$/) && (typeof (a)) != null && (typeof (b)) != null && a != '' && b != '' && a.length < 50){
+            console.log(a.length);
             appData.expenses[a] = b;
         } else {
             i--,
             alert("Введите статью без использования цыфр");
         };
    };
+
 
         // Второй   вариант 
 
@@ -83,4 +88,7 @@ if (result < 100) {
     console.log("Ошибка!!");
 };
 console.log(appData);
+
+
+
 
